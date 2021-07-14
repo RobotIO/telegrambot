@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  node: 
+    restart: unless-stopped
+    container_name: ${APP_NAME}_node
+    image: node:14-alpine3.11
+    volumes: 
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    command: npm start
